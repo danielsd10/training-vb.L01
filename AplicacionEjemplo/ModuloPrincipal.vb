@@ -4,17 +4,36 @@
 
         'Declarar variables
         Dim Base, Altura, Area As Double
+        Dim Texto As String
 
         'Solicitar valores
         Console.WriteLine("Calcular área de triángulo")
 
         'Asignar base
         Console.WriteLine("Ingrese el valor de la base:")
-        Base = CDbl(Console.ReadLine())
+        Texto = Console.ReadLine()
+        'Verificar si valor es numérico
+        If IsNumeric(Texto) Then
+            Base = CDbl(Texto)
+        Else
+            Console.ForegroundColor = ConsoleColor.Red
+            Console.WriteLine("El valor de la base no es válido.")
+            Console.ReadLine()
+            Return
+        End If
 
         'Asignar altura
         Console.WriteLine("Ingrese el valor de la altura:")
-        Altura = CDbl(Console.ReadLine())
+        Texto = Console.ReadLine()
+        'Verificar si valor es numérico
+        If IsNumeric(Texto) Then
+            Altura = CDbl(Texto)
+        Else
+            Console.ForegroundColor = ConsoleColor.Red
+            Console.WriteLine("El valor de la altura no es válido.")
+            Console.ReadLine()
+            Return
+        End If
 
         'Calcular área
         Area = CalcularAreaTriangulo(Base, Altura)
@@ -26,11 +45,5 @@
         Console.ReadLine()
 
     End Sub
-
-    Function CalcularAreaTriangulo(Base As Double, Altura As Double)
-        Dim Area As Double
-        Area = (Base * Altura) / 2
-        Return Area
-    End Function
 
 End Module

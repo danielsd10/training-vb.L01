@@ -2,8 +2,17 @@
 
     Sub Main()
 
-        'Mostrar texto en la consola
-        Console.WriteLine("Hola Mundo!")
+        'Declarar variable
+        Dim Nombre As String
+
+        'Solicitar nombre
+        Console.WriteLine("Ingrese su nombre:")
+
+        'Asignar valor con texto ingresado por el usuario
+        Nombre = Console.ReadLine()
+
+        'Mostrar nombre
+        Console.WriteLine("Hola {0}!", Nombre)
 
         'Esperar que el usuario presione Enter
         Console.ReadLine()
